@@ -8,6 +8,7 @@ An introductory workshop/walkthrough to SPM12
 ### [MATLAB installation](./walkthrough/matlab_install.md)
 
 ### [SPM installation](./walkthrough/spm_install.md)
+:white_check_mark:
 
 ### [MATLAB / SPM basics](./walkthrough/basics.md)
 

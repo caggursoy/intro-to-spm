@@ -21,4 +21,6 @@
         - ![](./imgs/setpath6.png)
         - Finally you should have arrived at the main view of the SPM fMRI interface
         - ![](./imgs/setpath7.png)
-- **Congrats!** You have installed and initialised SPM!
+
+
+## **Congrats!** You have installed and initialised SPM!
