@@ -9,18 +9,18 @@
 - Now start MATLAB and add the SPM to your MATLAB's path, either by GUI Set Path editor or with the MATLAB Command Window 
     - GUI Set Path editor:
         - Click on the Set Path button on the Environment section of the top menu pane
-        - ![](./imgs/setpath1.png)
+        - ![](./imgs/spm_install/setpath1.png)
         - Now click on `Add Folder` button. Be careful, you **should not click** the `Add with Subfolders` option. SPM will handle this
-        - ![](./imgs/setpath2.png)
+        - ![](./imgs/spm_install/setpath2.png)
         - Find the path of your SPM folder and add it to the MATLAB path
-        - ![](./imgs/setpath3.png)
+        - ![](./imgs/spm_install/setpath3.png)
         - Now in the Command Window type spm and press `Enter` to initialise SPM
-        - ![](./imgs/setpath4.png)
-        - ![](./imgs/setpath5.png)
+        - ![](./imgs/spm_install/setpath4.png)
+        - ![](./imgs/spm_install/setpath5.png)
         - Now you should see the main menu of SPM. Choose `fMRI`
-        - ![](./imgs/setpath6.png)
+        - ![](./imgs/spm_install/setpath6.png)
         - Finally you should have arrived at the main view of the SPM fMRI interface
-        - ![](./imgs/setpath7.png)
+        - ![](./imgs/spm_install/setpath7.png)
 
 
 ## **Congrats!** You have installed and initialised SPM!
