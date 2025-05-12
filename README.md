@@ -1,9 +1,11 @@
 # intro-to-spm
 An introductory workshop/walkthrough to SPM12 
 
+## Pre-workshop todos!
+- Please ensure you have MATLAB (a recent version would be perfect) running on your computer.
+- Now head to the [Pre-workshop](./pre-workshop/) folder and download both [dataset_downloader](./pre-workshop/dataset_downloader.m) MATLAB script and [ds003548-1.0.1](./pre-workshop/ds003548-1.0.1.sh) bash script.
 
-## Topics
-
+## Workshop Topics
 
 ### [MATLAB installation](./walkthrough/matlab_install.md)
 :negative_squared_cross_mark:
