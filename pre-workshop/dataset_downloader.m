@@ -48,3 +48,9 @@ for i = 1:length(filt_lines)
     fprintf('Downloading: %s to %s\n', url, output_path);
     websave(output_path, url); % Uncomment to actually download files
 end
+
+% Finally unzip all the .nii.gz files because SPM cannot read unzipped
+% files
+fl=dir('ds003548-1.0.1/**/*.gz');
+fl=fullfile({fl.folder},{fl.name});
+gunzip(fl);
