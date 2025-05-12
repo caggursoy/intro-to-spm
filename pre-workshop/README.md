@@ -12,3 +12,7 @@
 ![Open the MATLAB script](./imgs/download6.png)
 - When all the files are downloaded, it should look something like this:
 ![Final directory structure](./imgs/download7.png)
+
+## **Congrats!** You have now succesfully downloaded the dataset
+
+## Now head over to ![SPM-install](../walkthrough/spm_install.md) part to download and install SPM
