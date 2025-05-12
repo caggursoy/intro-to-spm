@@ -5,6 +5,10 @@ An introductory workshop/walkthrough to SPM12
 - Head to the [Pre-workshop](./pre-workshop/) folder and follow the instructions
 
 ## Workshop Topics
+### Any topic below here are not final and open to changes!
+
+### [Pre-workshop](./pre-workshop/README.md)
+:negative_squared_cross_mark:
 
 ### [MATLAB installation](./walkthrough/matlab_install.md)
 :negative_squared_cross_mark:
