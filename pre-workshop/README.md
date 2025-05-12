@@ -15,4 +15,4 @@
 
 ## **Congrats!** You have now succesfully downloaded the dataset
 
-## Now head over to ![SPM-install](../walkthrough/spm_install.md) part to download and install SPM
+## Now head over to [SPM-install](../walkthrough/spm_install.md) part to download and install SPM
