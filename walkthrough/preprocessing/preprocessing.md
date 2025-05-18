@@ -30,8 +30,21 @@ SPM preprocessing for BIDS
 - This increases the signal-to-noise ratio and accounts for individual differences in anatomy.
 - The kernel size (FWHM - Full Width at Half Maximum) should be chosen based on the expected size of the activation.
 
-## Check origins with using check registration function
-spm_check_registration(char(mprage_files))
+## Step -1! Check origins of each anatomical file!
+- One **'automatic'** option: https://github.com/rordenlab/spmScripts/blob/master/nii_setOrigin.m
+- Another: By hand with check registration function:
+    - Go to Command Window on MATLAB
+    - Type the following
+    ```matlab
+    anat_aux = {dir('/**/anat/sub*_T1w.nii')}; % get the original anatomical files
+    anat_aux = anat_aux{1}; % MATLAB/SPM logic for cell vectors
+    anat_files = strcat({anat_aux.folder},filesep,{anat_aux.name}); % create full filepaths for each anat file
+    for i=1:length(anat_files) % now loop over every anat file
+        spm_image('Display', anat_files{i}) % display each image
+        fig_handle=gcf;
+        waitfor(fig_handle) % and wait until the previous window is destroyed(closed)
+    end
+    ```
 
 
 ## **Slice Timing**
@@ -145,16 +158,7 @@ spm_check_registration(char(mprage_files))
     - Leave the rest as defaults
 - Click *Play* - *Run Batch* again on the top menu
 
-## BONUS! Check origins of each anatomical file!
-- One option: https://github.com/rordenlab/spmScripts/blob/master/nii_setOrigin.m
-- Another: By hand with check registration function:
-    - Go to Command Window on MATLAB
-    - Type the following
-    ```matlab
-    anat_aux = {dir('/**/anat/sub*_T1w.nii')}; % get the original anatomical files
-    anat_aux = anat_aux{1}; % MATLAB/SPM logic for cell vectors
-    anat_files = strcat({anat_aux.folder},filesep,{anat_aux.name}); % create full filepaths for each anat file
-    spm_image(char(anat_files)) %% fix this!
-    ```
+ 
+    
 
 ## BONUS 2! BIDS format derivative file arranging
