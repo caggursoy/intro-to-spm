@@ -10,13 +10,10 @@ An introductory workshop/walkthrough to SPM12
 ### [Pre-workshop](./pre-workshop/README.md)
 :white_check_mark:
 
-### [MATLAB installation](./walkthrough/matlab_install.md)
-:negative_squared_cross_mark:
-
 ### [SPM installation](./walkthrough/spm_install.md)
 :white_check_mark:
 
-### [MATLAB / SPM basics](./walkthrough/basics.md)
+### [SPM basics/theory](./walkthrough/basics.md)
 :negative_squared_cross_mark:
 
 ### [DICOM to BIDS conversion](./walkthrough/convert.md)
