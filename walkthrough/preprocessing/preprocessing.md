@@ -31,8 +31,11 @@ SPM preprocessing for BIDS
 - The kernel size (FWHM - Full Width at Half Maximum) should be chosen based on the expected size of the activation.
 
 ## Step -1! Check origins of each anatomical file!
+- In order to align all the brains (because all humans have slightly different sizes of brains) we have to set an origin that is roughly at the same place for all.
+- A strong candidate is anterior commissure (AC):  
+![Anterior and posterior commissure locations](https://prod-images-static.radiopaedia.org/images/27832865/a37d34594d61e30738a4b488349b73_gallery.jpeg) 
 - One **'automatic'** option: https://github.com/rordenlab/spmScripts/blob/master/nii_setOrigin.m
-- Another: By hand with check registration function:
+- A **manual** option: By hand with check registration function:
     - Go to Command Window on MATLAB
     - Type the following
     ```matlab
@@ -45,6 +48,15 @@ SPM preprocessing for BIDS
         waitfor(fig_handle) % and wait until the previous window is destroyed(closed)
     end
     ```
+    - Now you will set the origins of all anatomical data one by one
+    - Find the AC in the structural image by moving the 3D crosshairs, it should be roughly at this position:  
+    ![AC location](./imgs/origin/img0.png)
+    - Click **Set origin** to set the origin
+    ![Set origin button](./imgs/origin/img1.png)
+    - Then click **Reorient...** to save the file
+    ![Reorient button](./imgs/origin/img2.png)
+    - A SPM file window should appear, just click **Done**. In the *Save Matrix* pop-up you can just select **No**
+    - Now the same participant's structural image should appear on the window. By clicking the **Origin** button you can check if the file has been saved correctly
 
 
 ## **Slice Timing**
@@ -95,7 +107,7 @@ SPM preprocessing for BIDS
         ![Slice timing file selection - BIDS main dir](./imgs/slice/img8.png)
         - Here, we'll select the *run1* data for all *emotionalfaces* task
         - For that on the *Filter* menu at the bottom-right side we have to put some regular expression search terms
-        - In each participant, the filename we are looking for is: `sub-xx_task-emotionalfaces_run-1_bold.nii`. So we put `sub-\d+_task-emotionalfaces_run-1_bold\.nii` as the regexp search pattern, which matches filenames that start with *sub-*, followed by one or more digits, then *_task-emotionalfaces_run-1_bold*, and ending with *.nii*, ensuring the entire filename adheres to this specific pattern.
+        - In each participant, the filename we are looking for is: `sub-xx_task-emotionalfaces_run-1_bold.nii`. So we put `^sub-\d+_task-emotionalfaces_run-1_bold\.nii` as the regexp search pattern, which matches filenames that start with *sub-*, followed by one or more digits, then *_task-emotionalfaces_run-1_bold*, and ending with *.nii*, ensuring the entire filename adheres to this specific pattern.
         - When you click on the *Rec* button on bottom-left it will search for all files and give you a list. Now you should have a total of 16 files at the bottom box
         ![Slice timing file selection - All steps](./imgs/slice/img9.png)
         - Click *Done*
@@ -110,7 +122,7 @@ SPM preprocessing for BIDS
 ![Realignment menu before](./imgs/realign/img0.png)
     - As *Data* we select the previously *Slice timed* data
     - Again Click on *New: Session* and go to file selector by clicking *.Session* from top menu and *Specify* from bottom menu
-    - Now in the search bar, we put `asub-\d+_task-emotionalfaces_run-1_bold\.nii`
+    - Now in the search bar, we put `^asub-\d+_task-emotionalfaces_run-1_bold\.nii`
     ![Choose files](./imgs/realign/img1.png)
     - Click *Done* and your files are now selected
     - For rest of the fields, we can use SPM defaults as long as we do not have any specific requirements
