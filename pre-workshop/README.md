@@ -14,5 +14,6 @@
 ![Final directory structure](./imgs/download7.png)
 
 ## **Congrats!** You have now succesfully downloaded the dataset
+If you're interested, [here's the link](https://www.biorxiv.org/content/10.1101/2021.04.04.438425v3.full.pdf) to the publication linked to this dataset.
 
 ## Now head over to [SPM-install](../walkthrough/spm_install.md) part to download and install SPM
