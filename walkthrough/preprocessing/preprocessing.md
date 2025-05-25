@@ -1,5 +1,5 @@
 # Preprocessing
-SPM preprocessing for BIDS
+SPM preprocessing with using BIDS
 
 ## Slice timing
 - Correct for differences in acquisition time between different slices in each volume.
@@ -107,7 +107,8 @@ SPM preprocessing for BIDS
         ![Slice timing file selection - BIDS main dir](./imgs/slice/img8.png)
         - Here, we'll select the *run1* data for all *emotionalfaces* task
         - For that on the *Filter* menu at the bottom-right side we have to put some regular expression search terms
-        - In each participant, the filename we are looking for is: `sub-xx_task-emotionalfaces_run-1_bold.nii`. So we put `^sub-\d+_task-emotionalfaces_run-1_bold\.nii` as the regexp search pattern, which matches filenames that start with *sub-*, followed by one or more digits, then *_task-emotionalfaces_run-1_bold*, and ending with *.nii*, ensuring the entire filename adheres to this specific pattern.
+        - In each participant, the filename we are looking for is: `sub-xx_task-emotionalfaces_run-1_bold.nii`. So we put `^sub-\d+_task-emotionalfaces_run-1_bold\.nii` as the regexp search pattern, which matches filenames that start with *sub-*, followed by one or more digits, then *_task-emotionalfaces_run-1_bold*, and ending with *.nii*, ensuring the entire filename adheres to this specific pattern
+        - Now underneath the *Filter* box in the *Frames* box we have to put in `[1 Inf]` so SPM does not only take the first slice of the image, but all the slices for each image
         - When you click on the *Rec* button on bottom-left it will search for all files and give you a list. Now you should have a total of 16 files at the bottom box
         ![Slice timing file selection - All steps](./imgs/slice/img9.png)
         - Click *Done*
@@ -124,6 +125,7 @@ SPM preprocessing for BIDS
     - Again Click on *New: Session* and go to file selector by clicking *.Session* from top menu and *Specify* from bottom menu
     - Now in the search bar, we put `^asub-\d+_task-emotionalfaces_run-1_bold\.nii`
     ![Choose files](./imgs/realign/img1.png)
+    - Once again underneath the *Filter* box in the *Frames* box we have to put in `[1 Inf]`
     - Click *Done* and your files are now selected
     - For rest of the fields, we can use SPM defaults as long as we do not have any specific requirements
 - Click *Play* - *Run Batch* again on the top menu
@@ -133,7 +135,7 @@ SPM preprocessing for BIDS
 - Click *Segment* on the main SPM menu
 ![Segment menu before](./imgs/realign/img0.png)
     - Now select *Channel - Volumes* on the menu and here we must find the anatomical files
-    - In the search bar, type `sub-\d+_T1w\.nii` and once again recursively search with *Rec* button. Then click *Done* and confirm the found files
+    - In the search bar, type `^sub-\d+_T1w\.nii`, put in `[1 Inf]` in the *Frames* box and once again recursively search with *Rec* button. Then click *Done* and confirm the found files
     - In the *Save INU corrected* option we select *Save\* INU corrected* as this is what we'll need in the future steps
     - For each of the *Tissues* options we should select *None* in the *Native Tissue* option as this will create files that we will not use in the future
     - Now scroll down to the end, in *Deformation fields* we need to save *Inverse + forward* so we have both of the files saved to the disk
@@ -143,21 +145,21 @@ SPM preprocessing for BIDS
 ## Coregistration
 - Now to coregistration
 - In main SPM menu, click on *Coregister* and choose *Coregister (Est&Res)*
-    - For *Fixed Image* we will use the original anatomical files for each participant. To do that, click *Specify* to start the file selector window; and put `^sub-\d+_T1w\.nii` in the search box on bottom right so we'll select the anatomical files
+    - For *Moved Image* we will use the original anatomical files for each participant. To do that, click *Specify* to start the file selector window; and put `^sub-\d+_T1w\.nii` in the search box on bottom right so we'll select the anatomical files 
         - Be careful, at this step we have added `^` in the beginning so the newly created segmentation files are not selected
         - This will select the first subject's image; and this is what we need.
     - Recursively search and confirm the selections by clicking *Done*
-    - Now for *Moved Image* we select meaned EPI file for all participants with `^meanasub-\d+_task-emotionalfaces_run-1_bold\.nii`
-    - And for *Other Images* we select all functional files that was procesed before with `^rasub-\d+_task-emotionalfaces_run-1_bold\.nii`
+    - Now for *Fixed Image* we select meaned EPI file for all participants with `^meanasub-\d+_task-emotionalfaces_run-1_bold\.nii`
     - Rest of the options we leave as SPM defaults
 - Click *Play* - *Run Batch* again on the top menu; again this step might take some time
 
 ## Normalisation
 - Now to Normalisation
 - In main SPM menu, click on *Normalise* and choose *Normalise (Write)*
+    - Add a new subject by clicking *Data* and *New: Subject*
     - For *Deformation Field* we select the field that was created in the segmentation step for each participant with `^y_.*\.nii$`. At this step SPM might already fill the search field by a RegExp expression but we have to change this to find the correct one.
     - Click *Done* and select the first participant's field
-    - For *Images to Write* we select the previously processed functional files with `^rasub-\d+_task-emotionalfaces_run-1_bold\.nii` 
+    - For *Images to Write* we select the previously processed functional files with `^rasub-\d+_task-emotionalfaces_run-1_bold\.nii` and in the *Frames* box type in `[1 Inf]`
     - Leave *Bounding box* as is
     - For *Voxel sizes* [2 2 2] is the default option but choosing [3 3 3] would make it more *honest*
     - And for *Interpolation* we choose *7th Degree B-Spline* to have the highest degree of interpolation
@@ -173,4 +175,4 @@ SPM preprocessing for BIDS
  
     
 
-## BONUS 2! BIDS format derivative file arranging
+## BONUS 2! BIDS format derivative directory arranging
