@@ -34,7 +34,7 @@ At first we'll start by specifying and estimating a First-Level Model for only o
 ## Estimate a First-Level Model
 - In the SPM GUI, click *Estimate*
 ![Estimate first level button](./imgs/img3.png)
-- You will reach the main first level estimation menu
+- You will reach the main estimation menu
 ![Estimate first level menu](./imgs/img4.png)
     - Now choose the `SPM.mat` file that was the result of the previous First-level specification step
     -  For *Write residuals*, choose *Yes*

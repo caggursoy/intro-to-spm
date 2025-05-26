@@ -116,6 +116,7 @@ SPM preprocessing with using BIDS
 - Now every field should be filled and should look like this:
 ![Input Slice Timing menu after](./imgs/slice/img11.png)
 - Click the green *Play* - *Run Batch* button on the top menu
+- After the calculation is completed, save the settings of this step to a `.mat` file as a batch by clicking the `Save` icon on the top menu
 
 ## Realignment
 - Time for spatial realignment
@@ -129,6 +130,7 @@ SPM preprocessing with using BIDS
     - Click *Done* and your files are now selected
     - For rest of the fields, we can use SPM defaults as long as we do not have any specific requirements
 - Click *Play* - *Run Batch* again on the top menu
+- After the calculation is completed, save the settings of this step to a `.mat` file as a batch by clicking the `Save` icon on the top menu
 
 ## Segmentation
 - Now we handle the segmentation of anatomical files
@@ -141,6 +143,7 @@ SPM preprocessing with using BIDS
     - Now scroll down to the end, in *Deformation fields* we need to save *Inverse + forward* so we have both of the files saved to the disk
     - Rest of the options can be left alone, SPM defaults are more than enough if one do not have specific requirements
 - Click *Play* - *Run Batch* again on the top menu; and now this step might take some time
+- After the calculation is completed, save the settings of this step to a `.mat` file as a batch by clicking the `Save` icon on the top menu
 
 ## Coregistration
 - Now to coregistration
@@ -152,6 +155,7 @@ SPM preprocessing with using BIDS
     - Now for *Fixed Image* we select meaned EPI file for all participants with `^meanasub-\d+_task-emotionalfaces_run-1_bold\.nii`
     - Rest of the options we leave as SPM defaults
 - Click *Play* - *Run Batch* again on the top menu; again this step might take some time
+- After the calculation is completed, save the settings of this step to a `.mat` file as a batch by clicking the `Save` icon on the top menu
 
 ## Normalisation
 - Now to Normalisation
@@ -164,6 +168,7 @@ SPM preprocessing with using BIDS
     - For *Voxel sizes* [2 2 2] is the default option but choosing [3 3 3] would make it more *honest*
     - And for *Interpolation* we choose *7th Degree B-Spline* to have the highest degree of interpolation
 - Click *Play* - *Run Batch* again on the top menu
+- After the calculation is completed, save the settings of this step to a `.mat` file as a batch by clicking the `Save` icon on the top menu
 
 ## Smoothing
 - Finally, Smoothing
@@ -171,8 +176,11 @@ SPM preprocessing with using BIDS
     - For *Images to smooth* we select the previously processed functional files with `^wrasub-\d+_task-emotionalfaces_run-1_bold\.nii` 
     - Leave the rest as defaults
 - Click *Play* - *Run Batch* again on the top menu
+- After the calculation is completed, save the settings of this step to a `.mat` file as a batch by clicking the `Save` icon on the top menu
 
  
     
 
-## BONUS 2! BIDS format derivative directory arranging
+## BONUS 1! BIDS format derivative directory arranging
+
+## BONUS 2! Divide regressor file into all participants individually
