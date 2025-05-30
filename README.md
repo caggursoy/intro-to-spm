@@ -19,13 +19,13 @@ An introductory workshop/walkthrough to SPM12
 ### [DICOM to BIDS conversion](./walkthrough/convert.md)
 :negative_squared_cross_mark:
 
-### [Preprocessing](./walkthrough/preprocessing.md)
+### [Preprocessing](./walkthrough/preprocessing/preprocessing.md)
 :negative_squared_cross_mark:
 
-### [First-level analysis](./walkthrough/firstlevel.md)
+### [First-level analysis](./walkthrough/firstlevel/firstlevel.md)
 :negative_squared_cross_mark:
 
-### [Second-level analysis](./walkthrough/secondlevel.md)
+### [Second-level analysis](./walkthrough/secondlevel/secondlevel.md)
 :negative_squared_cross_mark:
 
 ### [Pipeline / automation](./walkthrough/pipeline.md)
