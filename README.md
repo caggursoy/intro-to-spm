@@ -14,19 +14,19 @@ An introductory workshop/walkthrough to SPM12
 :white_check_mark:
 
 ### [SPM basics/theory](./walkthrough/basics.md)
-:negative_squared_cross_mark:
+:x:
 
 ### [DICOM to BIDS conversion](./walkthrough/convert.md)
-:negative_squared_cross_mark:
+:x:
 
 ### [Preprocessing](./walkthrough/preprocessing/preprocessing.md)
-:negative_squared_cross_mark:
+:white_check_mark:
 
 ### [First-level analysis](./walkthrough/firstlevel/firstlevel.md)
-:negative_squared_cross_mark:
+:white_check_mark:
 
 ### [Second-level analysis](./walkthrough/secondlevel/secondlevel.md)
-:negative_squared_cross_mark:
+:white_check_mark:
 
 ### [Pipeline / automation](./walkthrough/pipeline.md)
-:negative_squared_cross_mark:
+:x:
