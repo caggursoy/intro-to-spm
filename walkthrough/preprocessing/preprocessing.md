@@ -182,5 +182,25 @@ SPM preprocessing with using BIDS
     
 
 ## BONUS 1! BIDS format derivative directory arranging
+All the preprocessed or `derived` files must be moved to the `derivatives` directory as BIDS dictates that the original files must be separated from any processed files.
+
+For this end, one either has to move all files from the individual subject folders; or write a script to do that.
+
+I have created a MATLAB function for that end, `bids_prep_mover` will move all the processed files to their respective folders in the main `derivatives` folder.
+
+Usage:  
+`bids_prep_mover(bids_data_path)`
+
+Don't forget to double check after the function is run!
 
 ## BONUS 2! Divide regressor file into all participants individually
+Another important step is to divide the cumulative regressor file `rp_*.txt` into individual files so we can use it in the first level design.
+
+Once again, I have a function for that, called `reg_arrange` which should cut the cumulative file in pieces and place them in the respective subject folders in `derivatives` directory.
+
+Usage:  
+`reg_arrange(prep_path, sub_nos, task_name)`
+Where;
+- `prep_path` is the path to the preprocessed files
+- `sub_nos` is a vector of subject numbers
+- `task_name` is the name of the fMRI task
