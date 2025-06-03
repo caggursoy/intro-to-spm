@@ -13,8 +13,8 @@ An introductory workshop/walkthrough to SPM12
 ### [SPM installation](./walkthrough/spm_install.md)
 :white_check_mark:
 
-### [SPM basics/theory](./walkthrough/basics.md)
-:x:
+### [SPM basics/theory](./walkthrough/basics/basics.md)
+:white_check_mark:
 
 ### [DICOM to BIDS conversion](./walkthrough/convert.md)
 :x:
@@ -29,4 +29,4 @@ An introductory workshop/walkthrough to SPM12
 :white_check_mark:
 
 ### [Pipeline / automation](./walkthrough/pipeline.md)
-:x:
+:white_check_mark:
